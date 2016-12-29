@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         
         let audioResource = Bundle.main.path(forResource: "bach", ofType: "mp3")!
         
-        try player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioResource ))
+        player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioResource ))
         scrub.maximumValue = Float(player.duration)
 
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateScrub), userInfo: nil, repeats: true)
